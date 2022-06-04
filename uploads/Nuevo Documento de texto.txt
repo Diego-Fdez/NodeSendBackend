@@ -1,0 +1,83 @@
+vite React = npm init vite@latest (para crear apps react)
+
+------------------------------------------------------------------
+
+Tailwind CSS = npm i -D tailwindcss@latest postcss@latest autoprefixer@latest
+Crear los archivos tailwind en el app = npx tailwindcss init -p
+
+en el archivo tailwind.config.js agregamos (para eliminar los estilos que no se esten utlizando) = content: ["./index.html", "./src/**/*.{js,jsx}"],
+
+Luego en el App.css incluimos =
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+-----------------------------------------------------------------------
+
+actualizar git en la rama main:
+git add .
+git commit -m "aqui va el commit"
+git checkout main
+git push 
+
+crear nueva rama en git y actualizarla:
+git checkout -d "nombre de la rama sin commillas" main
+git add .
+git commit -m "aqui va el commit"
+git checkout main
+git merge "nombre de la rama sin commillas"
+eliminar la rama recien creada:
+git branch -d "nombre de la rama sin commillas"
+git push -u origin main
+
+----------------------------------------------------------------------
+
+Formik y Yup (para formularios en React:
+
+Next JS:
+
+npx create-app-next
+
+-------------------------------------------------------------------
+deployment en heroku:
+
+heroku login
+heroku create
+git push heroku main ó heroku create --remote production
+
+-----------------------------------------------------------
+vercel para subir deployments con Next JS
+
+en el terminal: vercel login
+vercel out/
+------------------------------------------------------
+npm i -D prisma (para crear una dependencia de desarrollo de prisma)
+npm i @prisma/client 
+
+npx prisma migrate dev (crear una migración de los datos)
+npx prisma migrate reset (borra todos los datos de la base de datos)
+npm i ts-node (dependencia para prisma)
+scripts en package.json:
+"prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+
+para correr los scripts:
+npx prisma db seed 
+
+-------------------------------------------------------------
+Iniciando el backend MERN
+seleccionamos la carpeta y en la terminal escribimos: npm init.
+luego instalamos express: npm i express
+instalar nodemom para que actualice el servidor cada que hacemos cambios: npm install --save-dev nodemon
+instalar mongoose para crear la conexión a Mongo DB: npm i mongoose
+instalar dotenv para crear variables de entorno: npm i dotenv
+instalar dependencia para ocultar passwords: npm i bcrypt
+instalar json web token: npm i jsonwebtoken
+permitir cors: npm i cors
+
+--------------------------------------------
+Deplyment en Firebase
+firebase init hosting
+npm run export para crear la carpeta en next(Out)
+firebase deply
